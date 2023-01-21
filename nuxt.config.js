@@ -39,6 +39,27 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/firebase',
+      {
+        config: {
+          apiKey: "AIzaSyApR-VCBOhk6Z_zjFaz_3Wj-1bFNJgC2eI",
+          authDomain: "oga-twi.firebaseapp.com",
+          projectId: "oga-twi",
+          storageBucket: "oga-twi.appspot.com",
+          messagingSenderId: "902208675810",
+          appId: "1:902208675810:web:339bb6d6712f3187c063bb",
+          measurementId: "G-7MW8Q2LJC6"
+        },
+        services: {
+          auth: {
+            initialize: {
+              onAuthStateChangedMutation: "ON_AUTH_STATE_CHANGED_MUTATION",
+            },
+          },
+        }
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -51,7 +72,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
